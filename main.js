@@ -57,14 +57,18 @@ function handleEmptyCart(check) {
   checkout.style.display = check ? 'none' : 'block';
 }
 
+
+
 SubModelImages.forEach((image) => {
   image.addEventListener('click', () => {
     const src = image.getAttribute('src');
+    console.log(src);
     const number = src.split('-')[2].split('.')[0];
     ApplyModelAnimation(MainModelImage);
     MainModelImage.setAttribute('src', `./images/image-product-${number}.jpg`);
   });
 });
+
 
 PrevModalButton.addEventListener('click', () => {
   const src = MainModelImage.getAttribute('src');
@@ -155,12 +159,14 @@ MainProdutImage.addEventListener('click', () => {
   header.style.zIndex = '-9999';
 });
 
+const MainProductImage2 = document.querySelector('.MainProduct');
+
 MainSubImages.forEach((image) => {
   image.addEventListener('click', () => {
     const src = image.getAttribute('src');
     const number = src.split('-')[2].split('.')[0];
-    ApplyModelAnimation(MainProdutImage);
-    updateMainProductImage(src, number);
+    ApplyModelAnimation(MainProductImage2);
+    MainProductImage2.setAttribute('src', `./images/image-product-${number}.jpg`);
   });
 });
 

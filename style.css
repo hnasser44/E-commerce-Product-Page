@@ -22,6 +22,11 @@ img {
     cursor: pointer;
 }
 
+.MainProduct {
+    pointer-events: all;
+}
+
+
 
 
 body {
